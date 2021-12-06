@@ -4,7 +4,7 @@
 
 
 
-![](demo/demo.JPG)
+![](demo/demo.jpg)
 
 
 ## Requirements  (Prerequisites)
