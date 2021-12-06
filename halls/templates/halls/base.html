@@ -1,0 +1,129 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+ 
+<head>
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="{% static 'hall/custom.css' %}">
+
+  <link rel="stylesheet" href="{% static 'hall/footer.css' %}">
+
+  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+
+  <link rel="icon" type="image/png" href="{% static 'hall/favicon.ico' %}">
+  <title>Hall of fame</title>
+
+</head>
+
+
+
+
+<body>
+  <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 bg-white border-bottom shadow-sm">
+    <h5 class="my-0 mr-md-auto font-weight-normal"><a href="{% url 'home' %}" class="text-dark">Hall of Fame Vidz</a></h5>
+    <nav class="my-2 my-md-0 mr-md-3">
+      {% if user.is_authenticated %}
+      <a class="p-2 text-dark" href="{% url 'dashboard' %}">Dashboard</a>
+      <a class="p-2 text-dark" href="{% url 'logout' %}">Log Out</a>
+      {% else %}
+      <a class="p-2 text-dark" href="{% url 'login' %}">Log In</a>
+      {% endif %}
+    </nav>
+    {% if user.is_authenticated == False %}
+    <a class="btn btn-outline-primary" href="{% url 'signup' %}">Sign up</a>
+    {% endif %}
+  </div>
+
+  </div>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  {% block content %}
+  {% endblock %}
+
+  <br>
+  
+<footer id="footer" class="footer-1">
+  <div class="main-footer widgets-dark typo-light">
+  <div class="container">
+  <div class="row">
+    
+  <div class="col-xs-12 col-sm-6 col-md-3">
+  <div class="widget subscribe no-box">
+  <h5 class="widget-title">Full Stack Djano3 Website<span></span></h5>
+  <p>This website is implemented in Django with all modern features, multiple routing, handling database with images and many functionality + Bootstrap 4.</p>
+  </div>
+  </div>
+  
+  <div class="col-xs-12 col-sm-6 col-md-3">
+  <div class="widget no-box">
+  <h5 class="widget-title">My other works<span></span></h5>
+  <ul class="thumbnail-widget">
+  <li>
+  <div class="thumb-content"><a href="https://github.com/shubendu/Netflix-Movie-Recommendation">Netflix Movie Recommendation System</a></div>	
+  </li>
+  <li>
+  <div class="thumb-content"><a href="https://shubendu.github.io/p/financial-distress-prediction-using-smote/">Financial Distress Prediction using SMOTE</a></div>	
+  </li>
+  <li>
+  <div class="thumb-content"><a href="https://shubendu.github.io/p/sentiment-analysis-of-tweets/">Sentiment analysis of tweets</a></div>	
+  </li>
+  <li>
+  <div class="thumb-content"><a href="https://shubendu.github.io/p/human-activity-recognition-with-smartphones/">Human Activity Recognition with Smartphones</a></div>	
+  </li>
+  </ul>
+  </div>
+  </div>
+  
+  <div class="col-xs-12 col-sm-6 col-md-3">
+  <div class="widget no-box">
+  <h5 class="widget-title">About<span></span></h5>
+  <p>Please visit my Blogs for more content like this 😊</p>
+  <a class ="btn" id="btnn" href="https://shubendu.github.io" target="_blank">My Blogs</a>
+  </div>
+  </div>
+  
+  <div class="col-xs-12 col-sm-6 col-md-3">
+  
+  <div class="widget no-box">
+  <h5 class="widget-title">Contact Me<span></span></h5>
+  
+  <p><a href="mailto:biswasshubendu4@gmail.com" title="glorythemes">biswasshubendu4@gmail.com</a></p>
+  <ul class="social-footer2">
+  <li class=""><a  target="_blank" href="https://www.linkedin.com/in/shubendubiswas/"><img alt="linkedin" width="30" height="30" src="https://freepngimg.com/thumb/linkedin/9-2-linkedin-free-download-png.png"></a></li>
+  <li class=""><a href="https://github.com/shubendu" target="_blank" title="github"><img alt="github" width="30" height="30" src="https://freepngimg.com/thumb/github/1-2-github-free-png-image.png"></a></li>
+  <li class=""><a href="https://twitter.com/BiswasShubendu" target="_blank" title="Twitter"><img alt="Twitter" width="30" height="30" src="https://freepngimg.com/thumb/twitter/15-2-twitter-png-picture.png"></a></li>
+  </ul>
+  </div>
+  </div>
+  
+  </div>
+  </div>
+  </div>
+    
+  <div class="footer-copyright">
+  <div class="container">
+  <div class="row">
+  <div class="col-md-12 text-center">
+  <p>Copyright Shubendu Biswas © 2021. All rights reserved.</p>
+  </div>
+  </div>
+  </div>
+  </div>
+  </footer>
+
+</body>
+
+</html>
